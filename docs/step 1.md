@@ -16,4 +16,6 @@ The program needs to perform calculations for:
 
 the program should also generate the reports as both output in the gui AND external files (an html report and a txt report). This could possibly mean a "export" or "save to" button.
 
+The app should also have a means to save the results to a database using a DBMS (through the python app GUI) and look up results aswell.
+
 (note: calculations list is copied from task sheet for clarity)
