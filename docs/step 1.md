@@ -14,4 +14,6 @@ The program needs to perform calculations for:
 * the monthly cash surplus after paying the loan, and
 * whether the loan appears affordable.
 
-(note: above list is copied from task sheet for clarity)
+the program should also generate the reports as both output in the gui AND external files (an html report and a txt report). This could possibly mean a "export" or "save to" button.
+
+(note: calculations list is copied from task sheet for clarity)
