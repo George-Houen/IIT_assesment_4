@@ -2,7 +2,7 @@
 
 The buisness owner needs an app to perform calculations for them to determine the affordability of diffirent loans, record and compare them.
 
-The solution should be a GUI python based app (specifically using tkinter), that is portable and accesible to users without technical or IT knolledge.
+The solution should be a GUI python based app (specifically using tkinter, and its .grid() method), that is portable and accesible to users without technical or IT knolledge.
 
 It needs to address potential errors in a correct way, aswell as genrally run smoothly.
 
