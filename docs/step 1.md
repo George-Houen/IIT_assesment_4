@@ -4,7 +4,7 @@ The buisness owner needs an app to perform calculations for them to determine th
 
 The solution should be a GUI python based app (specifically using tkinter, and its .grid() method), that is portable and accesible to users without technical or IT knolledge.
 
-It needs to address potential errors in a correct way, aswell as genrally run smoothly.
+It needs to address potential errors in a correct way, using try/except blocks, aswell as genrally run smoothly.
 
 The program needs to perform calculations for:
 
