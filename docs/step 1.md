@@ -6,4 +6,10 @@ The solution should be a GUI python based app (specifically using tkinter), that
 
 It needs to address potential errors in a correct way, aswell as genrally run smoothly.
 
-The program needs to perform calculations for
+The program needs to perform calculations for:
+
+* the monthly repayment,
+* the total repayment amount,
+* the total interest paid,
+* the monthly cash surplus after paying the loan, and
+* whether the loan appears affordable.
