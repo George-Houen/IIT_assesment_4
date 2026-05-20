@@ -42,3 +42,13 @@ total interest				= 	total repayment - P
 monthly cash surplus		=	monthly_income - monthly_expenses - M
 						=	8500 - 6200 - 1797
 						= 	503
+
+summurised outputs:
+
+| Calculated Value       | Approximate Result      |
+| ---------------------- | ----------------------- |
+| Monthly repayment      | $466.59                 |
+| total repayment amount | $16,797.36              |
+| total interest paid    | $1797.36                |
+| monthly cash surplus   | 503                     |
+| affordablility         | is affordable (503 > 0) |
