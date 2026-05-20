@@ -16,7 +16,7 @@ and then *Case Study: Small Business Loan Repayment Planner* gives us these outp
 * the monthly cash surplus after paying the loan, and
 * whether the loan appears affordable.
 
-## tablulized
+# tablulized
 
 | Input            | Description                                   | Unit              | Example Value |
 | ---------------- | --------------------------------------------- | ----------------- | ------------- |
