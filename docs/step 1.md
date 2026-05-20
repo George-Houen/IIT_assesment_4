@@ -13,3 +13,5 @@ The program needs to perform calculations for:
 * the total interest paid,
 * the monthly cash surplus after paying the loan, and
 * whether the loan appears affordable.
+
+(note: above list is copied from task sheet for clarity)
