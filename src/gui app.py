@@ -1,7 +1,7 @@
 import tkinter as tk
 from typing import Any
 from config import (
-    HEADER_FONT
+    HEADER_FONT #type: ignore
 )
 
 class App(tk.Tk):
@@ -14,7 +14,7 @@ class App(tk.Tk):
 
         self.header = tk.Frame(self)
         self.header.grid(row=0, column=0)
-        tk.Label(self.header, text="IIT assignment 4", font=HEADER_FONT).grid(column=0, row=0)
+        tk.Label(self.header, text="IIT assignment 4", **HEADER_FONT).grid(column=0, row=0) #type: ignore
         tk.Label(self.header, text="u3324971").grid(column=0, row=1)
 
 
