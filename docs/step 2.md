@@ -18,19 +18,19 @@ and then ***Case Study: Small Business Loan Repayment Planne**r* gives us these 
 
 # tablulized
 
-| Input            | Description                                   | Unit            | Example Value |
-| ---------------- | --------------------------------------------- | --------------- | ------------- |
-| Loan amount      | Amount borrowed from the bank                 | Dollars         | 15000         |
-| interest rate    | increase of amount owed every month           | percent / month | 2.1           |
-| loan term        | time over whole loan is payed off             | months          | 32            |
-| monthly income   | total income of store every month             | Dollars / month | 12,500        |
-| monthly expenses | income deducted each month for other purposes | Dollars / month | 11,250        |
+| Input            | Description                                   | Unit              | Example Value |
+| ---------------- | --------------------------------------------- | ----------------- | ------------- |
+| Loan amount      | Amount borrowed from the bank                 | Dollars           | 15000         |
+| interest rate    | increase of amount owed every month           | percent per month | 2.1           |
+| loan term        | time over whole loan is payed off             | months            | 32            |
+| monthly income   | total income of store every month             | Dollars per month | 12,500        |
+| monthly expenses | income deducted each month for other purposes | Dollars per month | 11,250        |
 
 
-| Output                    | Description                    | Unit              |
-| ------------------------- | ------------------------------ | ----------------- |
-| Monthly repayment         | Estimated monthly loan payment | Dollars per month |
-| total reparment amount    | ``                             |                   |
-| total interest paid       | ``                             | ``                |
-| monthly cash cash surplus | ``                             | ``                |
-| affordablility            | ``                             |                   |
+| Output                 | Description                                                    | Unit              |
+| ---------------------- | -------------------------------------------------------------- | ----------------- |
+| Monthly repayment      | Estimated monthly loan payment                                 | Dollars per month |
+| total repayment amount | Estimated sum of payments made (loan amount plus interest)     | Dollars           |
+| total interest paid    | Estimated sum of interest payed over entire term               | Dollars           |
+| monthly cash surplus   | Estimated net cash after monthly expenses and monthly payments | Dollars per month |
+| affordablility         | affordability                                                  | boolean (yes/no)  |
