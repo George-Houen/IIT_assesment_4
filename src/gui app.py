@@ -23,6 +23,21 @@ class App(tk.Tk):
         self.body = tk.Frame(self)
         self.body.grid(row=1, column=0)
 
+        self.in_var_loan_amount = tk.StringVar(self, "")
+        self.in_var_interest_rate = tk.StringVar(self, "")
+        self.in_var_loan_term = tk.StringVar(self, "")
+        self.in_var_monthly_income = tk.StringVar(self, "")
+        self.in_var_monthly_expenses = tk.StringVar(self, "")
+
+        tk.Label(self.body, text="")
+
+        tk.Label(self.body, text="loan amount").grid(column= 0, row=0)
+        tk.Label(self.body, text="interest rate").grid(column= 0, row=1)
+        tk.Label(self.body, text="loan term").grid(column= 0, row=2)
+        tk.Label(self.body, text="monthly income").grid(column= 0, row=3)
+        tk.Label(self.body, text="monthly expenses").grid(column= 0, row=4)
+
+
 
 if __name__ == "__main__":
     App().mainloop()
