@@ -43,7 +43,8 @@ class CalcObject:
             if self._monthly_interest_rate == 0:
                 monthly_repayment = self._loan_amount / self._loan_term
             else:
-                monthly_repayment = (self._loan_amount * self._monthly_interest_rate * (1+self._monthly_interest_rate) ** self._loan_term) / (((1+self._monthly_interest_rate) ** self._loan_term) - 1)
+                factor = (1+self._monthly_interest_rate) ** self._loan_term
+                monthly_repayment = (self._loan_amount * self._monthly_interest_rate * factor) / ((factor) - 1)
         except Exception as e:
             self._error_log.append(str(e))
             return None
