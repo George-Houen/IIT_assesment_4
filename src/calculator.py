@@ -38,9 +38,12 @@ class CalcObject:
                 raise ValueError("loan amount must be more then 0") 
             if self._loan_term <= 0:
                 raise ValueError("loan term must be more then 0") 
-            if self._monthly_interest_rate == None:
+            if self._monthly_interest_rate is None:
                 raise ValueError("monthly interest rate not calculated yet")
-            monthly_repayment = (self._loan_amount * self._monthly_interest_rate * (1+self._monthly_interest_rate) ** self._loan_term) / (((1+self._monthly_interest_rate) ** self._loan_term) - 1)
+            if self._monthly_interest_rate == 0:
+                monthly_repayment = self._loan_amount / self._loan_term
+            else:
+                monthly_repayment = (self._loan_amount * self._monthly_interest_rate * (1+self._monthly_interest_rate) ** self._loan_term) / (((1+self._monthly_interest_rate) ** self._loan_term) - 1)
         except Exception as e:
             self._error_log.append(str(e))
             return None
@@ -51,7 +54,7 @@ class CalcObject:
         try:
             if self._loan_term <= 0:
                 raise ValueError("loan term must be more then 0") 
-            if self._monthly_repayment == None:
+            if self._monthly_repayment is None:
                 raise ValueError("monthly repayment not calculated yet")
             total_repayment = self._monthly_repayment * self._loan_term
         except Exception as e:
@@ -62,7 +65,7 @@ class CalcObject:
     
     def get_total_interest(self) -> float | None:
         try:
-            if self._total_repayment == None:
+            if self._total_repayment is None:
                 raise ValueError("total repayment not calculated yet")
             total_interest = self._total_repayment - self._loan_amount
         except Exception as e:
@@ -73,7 +76,7 @@ class CalcObject:
     
     def get_monthly_cash_surplus(self) -> float | None:
         try:
-            if self._monthly_repayment == None:
+            if self._monthly_repayment is None:
                 raise ValueError("monthly repayment not calculated yet")
             monthly_cash_surplus = self._monthly_income - self._monthly_expenses - self._monthly_repayment
         except Exception as e:
