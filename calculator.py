@@ -97,7 +97,7 @@ class CaclObject:
             "total_repayment" : self._total_repayment,
             "total_interest" : self._total_interest,
             "monthly_cash_surplus" : self._monthly_cash_surplus,
-            "affordable" : self._monthly_cash_surplus > 0 #type: ignore
+            "affordable" : "affordable" if self._monthly_cash_surplus > 0 else "not affordable" #type: ignore
         }
     
     def get_errors(self) -> list[str]:
