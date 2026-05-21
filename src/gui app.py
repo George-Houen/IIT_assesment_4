@@ -43,7 +43,10 @@ class App(tk.Tk):
         tk.Entry(self.body, textvariable=self.in_var_monthly_income).grid(column= 1, row=3)
         tk.Entry(self.body, textvariable=self.in_var_monthly_expenses).grid(column= 1, row=4)
 
-        tk.Button(self.body, text="calculate", command=self.get_user_input_values).grid(column=0, row=5, columnspan=2)
+        tk.Button(self.body, text="calculate", command=self.calc_pipeline).grid(column=0, row=5, columnspan=2)
+
+    def calc_pipeline(self):
+        self.get_user_input_values()
 
     def get_user_input_values(self):
 
