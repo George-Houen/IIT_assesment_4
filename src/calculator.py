@@ -57,7 +57,7 @@ class CalcObject:
         except Exception as e:
             self._error_log.append(str(e))
             return None
-        self._monthly_repayment = total_repayment
+        self._total_repayment = total_repayment
         return total_repayment
     
     def get_total_interest(self) -> float | None:
