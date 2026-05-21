@@ -36,6 +36,8 @@ class CaclObject:
         try:
             if self._loan_amount <= 0:
                 raise ValueError("loan amount must be more then 0") 
+            if self._loan_term <= 0:
+                raise ValueError("loan term must be more then 0") 
             if self._monthly_interest_rate == None:
                 raise ValueError("monthly interest rate not calculated yet")
             monthly_repayment = (self._loan_amount * self._monthly_interest_rate * (1+self._monthly_interest_rate) ** self._loan_term) / (((1+self._monthly_interest_rate) ** self._loan_term) - 1)
@@ -44,6 +46,21 @@ class CaclObject:
             return None
         self._monthly_repayment = monthly_repayment
         return monthly_repayment
+    
+    def get_total_repayment(self) -> float | None:
+        try:
+            if self._loan_term <= 0:
+                raise ValueError("loan term must be more then 0") 
+            if self._monthly_repayment == None:
+                raise ValueError("monthly repayment not calculated yet")
+            total_repayment = self._monthly_repayment * self._loan_term
+        except Exception as e:
+            self._error_log.append(str(e))
+            return None
+        self._monthly_repayment = total_repayment
+        return total_repayment
+    
+    
 
     def full_calc_pipeline(self) -> dict[str, float] | None:
         return
