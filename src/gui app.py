@@ -7,6 +7,7 @@ from config import (
 )
 
 from calculator import CalcObject
+from reports import generate_html, generate_txt
 
 class App(tk.Tk):
     def __init__(self, *args : Any, **kwargs : Any):
@@ -85,6 +86,10 @@ class App(tk.Tk):
         self.out_var_total_interest.set(f"${results["total_interest"]:.2f}")
         self.out_var_monthly_cash_surplus.set(f"${results["monthly_cash_surplus"]:.2f}")
         self.out_var_affordable.set(f"{results["affordable"]}")
+
+        generate_txt(inputs, results)
+        generate_html(inputs, results)
+        
 
 
 
