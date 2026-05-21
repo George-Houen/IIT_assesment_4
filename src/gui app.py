@@ -44,17 +44,16 @@ class App(tk.Tk):
         tk.Entry(self.body, textvariable=self.in_var_monthly_expenses).grid(column= 1, row=4)
 
     def get_user_input_values(self):
-        loan_amount = self.in_var_loan_amount.get()
-        interest_rate = self.in_var_interest_rate.get()
-        monthly_expenses = self.in_var_monthly_expenses.get()
-        loan_term = self.in_var_loan_term.get()
-        monthly_income = self.in_var_monthly_income.get()
+        try:
+            loan_amount = float(self.in_var_loan_amount.get())
+            interest_rate = float(self.in_var_interest_rate.get())
+            monthly_expenses = float(self.in_var_monthly_expenses.get())
+            loan_term = float(self.in_var_loan_term.get())
+            monthly_income = float(self.in_var_monthly_income.get())
+        except ValueError:
+            print(f"must be a valid number")
 
-        loan_amount = float(loan_amount)
-        interest_rate = float(interest_rate)
-        monthly_expenses = float(monthly_expenses)
-        loan_term = float(loan_term)
-        monthly_income = float(monthly_income)
+        
 
 
 if __name__ == "__main__":
