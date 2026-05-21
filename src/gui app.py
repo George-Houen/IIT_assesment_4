@@ -59,7 +59,7 @@ class App(tk.Tk):
             try:
                 values[k] = float(v.get())
             except ValueError:
-                print(k)
+                print(f"please enter {k} as a valid string")
         
 
         
