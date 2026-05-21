@@ -3,6 +3,7 @@ from typing import Any
 
 #directorys
 BASE_DIR = Path.cwd()
+OUTPUT_DIR = BASE_DIR/"reports"
 
 #styles (family, size, "style1 style2 ...")
 HEADER : dict[str, Any] = {
