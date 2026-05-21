@@ -60,10 +60,45 @@ class CaclObject:
         self._monthly_repayment = total_repayment
         return total_repayment
     
+    def get_total_interest(self) -> float | None:
+        try:
+            if self._total_repayment == None:
+                raise ValueError("total repayment not calculated yet")
+            total_interest = self._total_repayment - self._loan_amount
+        except Exception as e:
+            self._error_log.append(str(e))
+            return None
+        self._total_interest = total_interest
+        return total_interest
     
+    def get_monthly_cash_surplus(self) -> float | None:
+        try:
+            if self._monthly_repayment == None:
+                raise ValueError("monthly repayment not calculated yet")
+            monthly_cash_surplus = self._monthly_income - self._monthly_expenses - self._monthly_repayment
+        except Exception as e:
+            self._error_log.append(str(e))
+            return None
+        self._monthly_cash_surplus = monthly_cash_surplus
+        return monthly_cash_surplus
 
-    def full_calc_pipeline(self) -> dict[str, float] | None:
-        return
+
+    def full_calc_pipeline(self) -> dict[str, float | None] | None:
+        self._error_log = []
+        self.get_monthly_interest_rate()
+        self.get_monthly_repayment()
+        self.get_total_repayment()
+        self.get_total_interest()
+        self.get_monthly_cash_surplus()
+        if len(self._error_log) != 0:
+            return None
+        return {
+            "monthly_interest_rate" : self._monthly_interest_rate,
+            "monthly_repayment" : self._monthly_repayment,
+            "total_repayment" : self._total_repayment,
+            "total_interest" : self._total_interest,
+            "monthly_cash_surplus" : self._monthly_cash_surplus
+        }
     def get_errors(self) -> list[str]:
         return self._error_log
     
