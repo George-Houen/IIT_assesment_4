@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 from typing import Any
 from config import (
     HEADER,
@@ -65,10 +66,13 @@ class App(tk.Tk):
         #this one is two columns cos its more of a statment
         tk.Entry(self.body, textvariable=self.out_var_affordable).grid(column= 0, row=10, columnspan=2)
         
-
+    def error(self, error : str) -> None:
+        messagebox.showerror("Error", error) # type: ignore
 
     def calc_pipeline(self):
-        self.get_user_input_values()
+        inputs = self.get_user_input_values()
+        if inputs is None:
+
 
     def get_user_input_values(self) -> dict[str, float] | None:
         """retreive input values from entry feilds and check them
