@@ -70,6 +70,7 @@ class App(tk.Tk):
             except ValueError:
                 print(f"please enter {k} as a valid number")
                 return None
+        return values
         
 
         
