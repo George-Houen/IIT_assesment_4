@@ -40,8 +40,8 @@ total interest				= 	total repayment - P
 						= 	1797.357807
 
 monthly cash surplus		=	monthly_income - monthly_expenses - M
-						=	8500 - 6200 - 1797
-						= 	503
+						=	8500 - 6200 - 466
+						= 	1834
 
 summurised outputs:
 
