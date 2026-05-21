@@ -83,7 +83,7 @@ class CaclObject:
         return monthly_cash_surplus
 
 
-    def full_calc_pipeline(self) -> dict[str, float | None] | None:
+    def full_calc_pipeline(self) -> dict[str, float | bool | None] | None:
         self._error_log = []
         self.get_monthly_interest_rate()
         self.get_monthly_repayment()
@@ -93,12 +93,13 @@ class CaclObject:
         if len(self._error_log) != 0:
             return None
         return {
-            "monthly_interest_rate" : self._monthly_interest_rate,
             "monthly_repayment" : self._monthly_repayment,
             "total_repayment" : self._total_repayment,
             "total_interest" : self._total_interest,
-            "monthly_cash_surplus" : self._monthly_cash_surplus
+            "monthly_cash_surplus" : self._monthly_cash_surplus,
+            "affordable" : self._monthly_cash_surplus > 0 #type: ignore
         }
+    
     def get_errors(self) -> list[str]:
         return self._error_log
     
