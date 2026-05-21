@@ -6,6 +6,8 @@ from config import (
     SUB_HEADER
 )
 
+from calculator import CalcObject
+
 class App(tk.Tk):
     def __init__(self, *args : Any, **kwargs : Any):
         super().__init__(*args, **kwargs)
@@ -69,9 +71,22 @@ class App(tk.Tk):
     def error(self, error : str) -> None:
         messagebox.showerror("Error", error) # type: ignore
 
-    def calc_pipeline(self):
+    def calc_pipeline(self) -> None:
         inputs = self.get_user_input_values()
         if inputs is None:
+            return
+        calc = CalcObject(**inputs)
+        results = calc.full_calc_pipeline()
+        if results is None:
+            self.error(calc.get_errors())
+            return
+        self.out_var_monthly_repayment.set(f"${results["monthly_repayment"]}")
+        self.out_var_total_repayment.set(f"${results["total_repayment"]}")
+        self.out_var_total_interest.set(f"${results["total_interest"]}")
+        self.out_var_monthly_cash_surplus.set(f"${results["monthly_cash_surplus"]}")
+        self.out_var_affordable.set(f"{results["affordable"]}")
+
+
 
 
     def get_user_input_values(self) -> dict[str, float] | None:
@@ -94,7 +109,7 @@ class App(tk.Tk):
             try:
                 values[k] = float(v.get())
             except ValueError:
-                print(f"please enter {k} as a valid number")
+                self.error(f"please enter {k} as a valid number")
                 return None
         return values
         
