@@ -85,7 +85,7 @@ def generate_html(inputs : dict[str, float], results : dict[str, float | str]) -
         </html>
         """
     
-    with open(OUTPUT_DIR/"load_report.html", "w") as file:
+    with open(OUTPUT_DIR/"report.html", "w") as file:
         file.write(html)
 
 def generate_txt(calc : CalcObject) -> None:
