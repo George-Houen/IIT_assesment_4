@@ -87,7 +87,7 @@ class CalcObject:
         return monthly_cash_surplus
 
 
-    def full_calc_pipeline(self) -> dict[str, float | bool | None] | None:
+    def full_calc_pipeline(self) -> dict[str, float | str] | None:
         self._error_log = []
         self.get_monthly_interest_rate()
         self.get_monthly_repayment()

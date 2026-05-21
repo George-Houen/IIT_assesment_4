@@ -107,10 +107,11 @@ def generate_txt(inputs : dict[str, float], results : dict[str, float | str]) ->
         Total Repayment: ${results['total_repayment']:,.2f}
         Total Interest: ${results['total_interest']:,.2f}
         Monthly Surplus: ${results['monthly_cash_surplus']:,.2f}
-        
+
         ==================================================
     """
-    pass
+    with open(OUTPUT_DIR/"report.txt", "w") as file:
+        file.write(report)
 
 def generate_sql(calc : CalcObject) -> None:
     pass
