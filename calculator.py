@@ -9,11 +9,11 @@ class CaclObject:
                 monthly_income : float
                 ) -> None:
         self._error_log : list[str] = []
-        self.loan_amount = loan_amount
-        self.interest_rate = interest_rate
-        self.monthly_expenses = monthly_expenses
-        self.loan_term = loan_term
-        self.monthly_income = monthly_income
+        self._loan_amount = loan_amount
+        self._interest_rate = interest_rate
+        self._monthly_expenses = monthly_expenses
+        self._loan_term = loan_term
+        self._monthly_income = monthly_income
         pass
     def full_calc_pipeline(self) -> dict[str, int] | None:
         return 
