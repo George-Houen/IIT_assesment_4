@@ -1,6 +1,6 @@
 
 
-class CaclObject:
+class CalcObject:
     def __init__(self, 
                 loan_amount : float, 
                 interest_rate : float, #annual
@@ -100,6 +100,8 @@ class CaclObject:
             "affordable" : "affordable" if self._monthly_cash_surplus > 0 else "not affordable" #type: ignore
         }
     
-    def get_errors(self) -> list[str]:
-        return self._error_log
+    def get_errors(self) -> str:
+        if len(self._error_log) == 0:
+            return ""
+        return self._error_log[0]
     
