@@ -45,6 +45,28 @@ class App(tk.Tk):
 
         tk.Button(self.body, text="calculate", command=self.calc_pipeline).grid(column=0, row=5, columnspan=2)
 
+
+        #calculation outputs:
+        self.out_var_monthly_repayment = tk.StringVar(self, "")
+        self.out_var_total_repayment = tk.StringVar(self, "")
+        self.out_var_total_interest = tk.StringVar(self, "")
+        self.out_var_monthly_cash_surplus = tk.StringVar(self, "")
+        self.out_var_affordable = tk.StringVar(self, "")
+
+        tk.Label(self.body, text="monthly repayment").grid(column= 0, row=6)
+        tk.Label(self.body, text="total repayment").grid(column= 0, row=7)
+        tk.Label(self.body, text="total interest").grid(column= 0, row=8)
+        tk.Label(self.body, text="monthly cash surplus").grid(column= 0, row=9)
+
+        tk.Entry(self.body, textvariable=self.out_var_monthly_repayment).grid(column= 1, row=6)
+        tk.Entry(self.body, textvariable=self.out_var_total_repayment).grid(column= 1, row=7)
+        tk.Entry(self.body, textvariable=self.out_var_total_interest).grid(column= 1, row=8)
+        tk.Entry(self.body, textvariable=self.out_var_monthly_cash_surplus).grid(column= 1, row=9)
+        #this one is two columns cos its more of a statment
+        tk.Entry(self.body, textvariable=self.out_var_affordable).grid(column= 0, row=10, columnspan=2)
+        
+
+
     def calc_pipeline(self):
         self.get_user_input_values()
 
