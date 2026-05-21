@@ -91,7 +91,24 @@ def generate_html(inputs : dict[str, float], results : dict[str, float | str]) -
 def generate_txt(inputs : dict[str, float], results : dict[str, float | str]) -> None:
 
     report = f"""
+        ==================================================
+
+        INPUT 
+        --------------------------------------------------
+        Loan Amount: ${inputs["loan_amount"]:,.2f}
+        Interest Rate: {inputs["interest_rate"]}%
+        Loan Term: {inputs["loan_term"]} months
+        Monthly Income: ${inputs["monthly_income"]:,.2f}
+        Monthly Expenses: ${inputs["monthly_expenses"]:,.2f}
         
+        OUTPUT
+        --------------------------------------------------
+        Monthly Repayment: ${results['monthly_repayment']:,.2f}
+        Total Repayment: ${results['total_repayment']:,.2f}
+        Total Interest: ${results['total_interest']:,.2f}
+        Monthly Surplus: ${results['monthly_cash_surplus']:,.2f}
+        
+        ==================================================
     """
     pass
 
