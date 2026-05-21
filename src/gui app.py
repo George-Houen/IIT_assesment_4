@@ -43,6 +43,8 @@ class App(tk.Tk):
         tk.Entry(self.body, textvariable=self.in_var_monthly_income).grid(column= 1, row=3)
         tk.Entry(self.body, textvariable=self.in_var_monthly_expenses).grid(column= 1, row=4)
 
+        tk.Button(self.body, text="calculate", command=self.get_user_input_values).grid(column=0, row=5, columnspan=2)
+
     def get_user_input_values(self):
 
         feilds = {
@@ -59,7 +61,7 @@ class App(tk.Tk):
             try:
                 values[k] = float(v.get())
             except ValueError:
-                print(f"please enter {k} as a valid string")
+                print(f"please enter {k} as a valid number")
         
 
         
