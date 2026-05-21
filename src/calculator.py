@@ -26,7 +26,7 @@ class CalcObject:
             if self._interest_rate < 0:
                 raise ValueError("interest rate cant be negative.")
             monthly_i_rate = self._interest_rate / (100 * 12)
-        except Exception as e:
+        except ValueError as e:
             self._error_log.append(str(e))
             return None
         self._monthly_interest_rate = monthly_i_rate
@@ -45,7 +45,7 @@ class CalcObject:
             else:
                 factor = (1+self._monthly_interest_rate) ** self._loan_term
                 monthly_repayment = (self._loan_amount * self._monthly_interest_rate * factor) / ((factor) - 1)
-        except Exception as e:
+        except ValueError as e:
             self._error_log.append(str(e))
             return None
         self._monthly_repayment = monthly_repayment
@@ -58,7 +58,7 @@ class CalcObject:
             if self._monthly_repayment is None:
                 raise ValueError("monthly repayment not calculated yet")
             total_repayment = self._monthly_repayment * self._loan_term
-        except Exception as e:
+        except ValueError as e:
             self._error_log.append(str(e))
             return None
         self._total_repayment = total_repayment
@@ -69,7 +69,7 @@ class CalcObject:
             if self._total_repayment is None:
                 raise ValueError("total repayment not calculated yet")
             total_interest = self._total_repayment - self._loan_amount
-        except Exception as e:
+        except ValueError as e:
             self._error_log.append(str(e))
             return None
         self._total_interest = total_interest
@@ -80,7 +80,7 @@ class CalcObject:
             if self._monthly_repayment is None:
                 raise ValueError("monthly repayment not calculated yet")
             monthly_cash_surplus = self._monthly_income - self._monthly_expenses - self._monthly_repayment
-        except Exception as e:
+        except ValueError as e:
             self._error_log.append(str(e))
             return None
         self._monthly_cash_surplus = monthly_cash_surplus
