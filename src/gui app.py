@@ -80,10 +80,10 @@ class App(tk.Tk):
         if results is None:
             self.error(calc.get_errors())
             return
-        self.out_var_monthly_repayment.set(f"${results["monthly_repayment"]}")
-        self.out_var_total_repayment.set(f"${results["total_repayment"]}")
-        self.out_var_total_interest.set(f"${results["total_interest"]}")
-        self.out_var_monthly_cash_surplus.set(f"${results["monthly_cash_surplus"]}")
+        self.out_var_monthly_repayment.set(f"${results["monthly_repayment"]:.2f}")
+        self.out_var_total_repayment.set(f"${results["total_repayment"]:.2f}")
+        self.out_var_total_interest.set(f"${results["total_interest"]:.2f}")
+        self.out_var_monthly_cash_surplus.set(f"${results["monthly_cash_surplus"]:.2f}")
         self.out_var_affordable.set(f"{results["affordable"]}")
 
 
