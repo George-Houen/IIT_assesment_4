@@ -14,6 +14,12 @@ class CaclObject:
         self._monthly_expenses = monthly_expenses
         self._loan_term = loan_term
         self._monthly_income = monthly_income
+
+        self._monthly_interest_rate : float | None = None
+        self._monthly_repayment : float | None = None
+        self._total_repayment : float | None = None
+        self._total_interest : float | None = None
+        self._monthly_cash_surplus : float | None = None
         pass
     def full_calc_pipeline(self) -> dict[str, int] | None:
         return 
