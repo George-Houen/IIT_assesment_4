@@ -88,7 +88,11 @@ def generate_html(inputs : dict[str, float], results : dict[str, float | str]) -
     with open(OUTPUT_DIR/"report.html", "w") as file:
         file.write(html)
 
-def generate_txt(calc : CalcObject) -> None:
+def generate_txt(inputs : dict[str, float], results : dict[str, float | str]) -> None:
+
+    report = f"""
+        
+    """
     pass
 
 def generate_sql(calc : CalcObject) -> None:
