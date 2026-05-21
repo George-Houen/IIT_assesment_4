@@ -37,6 +37,12 @@ class App(tk.Tk):
         tk.Label(self.body, text="monthly income").grid(column= 0, row=3)
         tk.Label(self.body, text="monthly expenses").grid(column= 0, row=4)
 
+        tk.Entry(self.body, textvariable=self.in_var_loan_amount).grid(column= 1, row=0)
+        tk.Entry(self.body, textvariable=self.in_var_interest_rate).grid(column= 1, row=1)
+        tk.Entry(self.body, textvariable=self.in_var_loan_term).grid(column= 1, row=2)
+        tk.Entry(self.body, textvariable=self.in_var_monthly_income).grid(column= 1, row=3)
+        tk.Entry(self.body, textvariable=self.in_var_monthly_expenses).grid(column= 1, row=4)
+
 
 
 if __name__ == "__main__":
