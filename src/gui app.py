@@ -48,8 +48,12 @@ class App(tk.Tk):
     def calc_pipeline(self):
         self.get_user_input_values()
 
-    def get_user_input_values(self):
+    def get_user_input_values(self) -> dict[str, float] | None:
+        """retreive input values from entry feilds and check them
 
+        Returns:
+            dict[str, float] | None: values for each entry feild input, None if error
+        """
         feilds = {
             "loan_amount" : self.in_var_loan_amount,
             "interest_rate" : self.in_var_interest_rate,
@@ -65,6 +69,7 @@ class App(tk.Tk):
                 values[k] = float(v.get())
             except ValueError:
                 print(f"please enter {k} as a valid number")
+                return None
         
 
         
